@@ -2,7 +2,6 @@ import { Button, ThemeProvider, Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Box, margin } from "@mui/system";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 const icons = [
@@ -44,12 +43,10 @@ const homePageImg = [
 ];
 
 const HomePage = () => {
-  const navigate = useNavigate();
   return (
     <Grid>
       <Box
         sx={{
-          backgroundColor: "#606060",
           width: "100%",
           height: "500px",
           marginBottom: 5,
@@ -97,7 +94,7 @@ const HomePage = () => {
               border: "solid",
               borderRadius: "15px",
             }}
-            onClick={() => navigate("/products")}
+            // onClick={() => navigate("/products")}
           >
             Shop now
           </Button>
@@ -227,7 +224,7 @@ const HomePage = () => {
         }}
       >
         {homePageImg.map((e, index) => (
-          <div key={index} className="photoDivs2">
+          <div key={index} className="photoDivs2 homePageImg">
             <img src={e.img} alt="" width="100%" />
             <p>{e.name}</p>
           </div>

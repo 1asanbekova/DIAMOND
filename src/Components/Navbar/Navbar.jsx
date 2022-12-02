@@ -115,8 +115,18 @@ export default function Navbar() {
             >
               PRODUCTS
             </Button>
-            <Button sx={{ color: "black" }}>ABOUT US</Button>
-            <Button sx={{ color: "black" }}>CONTACT US</Button>
+            <Button
+              sx={{ color: "black" }}
+              onClick={() => navigate("/aboutus")}
+            >
+              ABOUT US
+            </Button>
+            <Button
+              sx={{ color: "black" }}
+              onClick={() => navigate("/contactus")}
+            >
+              CONTACT US
+            </Button>
           </Box>
           <Box sx={{ width: "20%", display: "flex", justifyContent: "end" }}>
             <Search sx={{ margin: "5px", color: "black" }}>
