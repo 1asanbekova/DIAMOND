@@ -1,0 +1,20 @@
+.photoDivs {
+  width: 15%;
+}
+
+.photoDivs p {
+  text-align: center;
+  line-height: "1.8";
+  color: "#434343";
+}
+.photoDivs2 {
+  width: 25%;
+
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.photoDivs2 p {
+  text-align: center;
+  font-size: 20px;
+  color: "#434343";
+}
