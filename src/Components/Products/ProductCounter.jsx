@@ -6,7 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Box } from "@mui/system";
 import { useProducts } from "../../Contexts/ProductContextProvider";
 import { useCart } from "../../Contexts/CartContextProvider";
-
+import "./Shop.css";
 const ProductCounter = () => {
   const { productDetails, getProductDetails } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
@@ -25,21 +25,19 @@ const ProductCounter = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          pt: "10px",
-          margin: "15px",
-          padding: "20px",
+          flexDirection: "column",
+          mt: "25%",
         }}
       >
-        {/* {productDetails.name} {productDetails.price} */}
         <Box
           className="counter_button"
           component="div"
           sx={{
-            border: "1px solid",
-            width: "70px",
-            height: "28px",
-            marginTop: "1px",
-            marginRight: "15px",
+            border: "2px solid",
+            borderRadius: "15px",
+            width: "25%",
+            height: "5vh",
+            margin: "auto",
           }}
         >
           <div>
@@ -61,42 +59,46 @@ const ProductCounter = () => {
           </div>
         </Box>
 
-        {checkProductInCart(productDetails.id) ? (
-          <Button
-            variant="contained"
-            onClick={() => addProductToCart(productDetails)}
-            sx={{
-              backgroundColor: "#0a203f",
-              color: "white",
-              width: "300px",
-              height: "55px",
-              // mb: "50px",
-              borderRadius: "1px",
-              font: "16px",
-              fontWeight: "600",
-            }}
-          >
-            ALREADY IN BAG
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            onClick={() => addProductToCart(productDetails)}
-            sx={{
-              backgroundColor: "#0a203f",
-              color: "white",
-              width: "300px",
-              height: "55px",
-              // mb: "50px",
-              borderRadius: "1px",
-              font: "16px",
-              fontWeight: "600",
-            }}
-          >
-            {" "}
-            ADD TO BAG
-          </Button>
-        )}
+        <Box sx={{ mt: "5%" }}>
+          {checkProductInCart(productDetails.id) ? (
+            <Button
+              variant="contained"
+              className="shop"
+              onClick={() => addProductToCart(productDetails)}
+              sx={{
+                backgroundColor: "#ffc7ba",
+                color: "rgb(47, 12, 12)",
+                width: "100%",
+                height: "10vh",
+                borderRadius: "15px",
+                fontWeight: 700,
+                fontFamily: "Quattrocento Sans",
+                fontSize: "20px",
+              }}
+            >
+              Already in cart
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              className="shop"
+              onClick={() => addProductToCart(productDetails)}
+              sx={{
+                backgroundColor: "#ffc7ba",
+                color: "rgb(47, 12, 12)",
+                width: "100%",
+                height: "10vh",
+                borderRadius: "15px",
+                fontWeight: 700,
+                fontFamily: "Quattrocento Sans",
+                fontSize: "20px",
+              }}
+            >
+              {" "}
+              Add to cart
+            </Button>
+          )}
+        </Box>
       </Box>
     </div>
   );
