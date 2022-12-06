@@ -21,6 +21,8 @@ import { useAuth } from "../../Contexts/AuthContextProvider";
 import { styled, alpha } from "@mui/material/styles";
 import { createTheme } from "@mui/system";
 import { Badge } from "@mui/material";
+import { useCart } from "../../Contexts/CartContextProvider";
+import { getCountProductsInCart } from "../../helpers/functions";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -82,6 +84,13 @@ function Navbar() {
       },
     },
   });
+  const { addProductToCart } = useCart();
+
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    setCount(getCountProductsInCart);
+  }, [addProductToCart]);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -435,12 +444,13 @@ function Navbar() {
                 sx={{
                   p: 0,
                   width: "40px",
+                  color: "black",
                   [theme.breakpoints.down("xxs")]: {
                     display: "none",
                   },
                 }}
               >
-                <Badge badgeContent={""} color="primary">
+                <Badge badgeContent={count} color="error">
                   <ShoppingBagIcon
                     sx={{
                       p: 0,

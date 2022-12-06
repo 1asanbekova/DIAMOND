@@ -40,7 +40,7 @@ const ProductPagination = ({ page, setPage, count }) => {
     },
   });
   return (
-    <div>
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Box
         sx={{
           width: "100%",
@@ -51,23 +51,14 @@ const ProductPagination = ({ page, setPage, count }) => {
             lg: "flex",
             xl: "flex",
           },
-          justifyContent: "center",
-          textAlign: "center",
           paddingBottom: "3%",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
+            justifyContent: "center",
             width: "100%",
-            margin: {
-              xs: "9%",
-              sm: "10%",
-              md: "0",
-              lg: "0%",
-              xl: "0",
-            },
           }}
         >
           <Typography
@@ -96,7 +87,7 @@ const ProductPagination = ({ page, setPage, count }) => {
           </Stack>
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 

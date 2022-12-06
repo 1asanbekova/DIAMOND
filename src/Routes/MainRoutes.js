@@ -6,10 +6,12 @@ import { ADD } from "../helpers/consts";
 import AboutUsPage from "../Pages/AboutUsPage";
 import AddProductPage from "../Pages/AddProductPage";
 import AuthPage from "../Pages/AuthPage";
+import CartPage from "../Pages/CartPage";
 import ContactUsPage from "../Pages/ContactUsPage";
 import EditProductPage from "../Pages/EditProductPage";
 import ProductDetailsPage from "../Pages/ProductDetailsPage";
 import ProductsPage from "../Pages/ProductsPage";
+import ShopPage from "../Pages/ShopPage";
 
 const MainRoutes = () => {
   const { user } = useAuth();
@@ -22,6 +24,8 @@ const MainRoutes = () => {
 
     { link: "/aboutus", element: <AboutUsPage />, id: 5 },
     { link: "/contactus", element: <ContactUsPage />, id: 6 },
+    { link: "/cart", element: <CartPage />, id: 8 },
+    { link: "/shop", element: <ShopPage />, id: 9 },
   ];
 
   const PRIVATE_ROUTES = [

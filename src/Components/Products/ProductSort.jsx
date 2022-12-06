@@ -52,6 +52,9 @@ export default function NativeSelectDemo() {
           [theme.breakpoints.down("xs")]: {
             width: "20%",
           },
+          [theme.breakpoints.down("xs")]: {
+            display: "none",
+          },
         }}
       >
         <InputLabel
@@ -98,6 +101,9 @@ export default function NativeSelectDemo() {
           },
           [theme.breakpoints.down("xs")]: {
             width: "20%",
+          },
+          [theme.breakpoints.down("xs")]: {
+            display: "none",
           },
         }}
       >

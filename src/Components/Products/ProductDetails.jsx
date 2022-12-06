@@ -1,4 +1,12 @@
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import PaymentIcon from "@mui/icons-material/Payment";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import "./ProductCard.css";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -84,12 +92,7 @@ const ProductDetails = () => {
               }
             }
           >
-            <img
-              width="100%"
-              // height="325px"
-              src={productDetails.picture}
-              alt=""
-            />
+            <img width="95%" src={productDetails.picture} alt="" />
           </Typography>
         </Box>
         <Box>
@@ -131,6 +134,8 @@ const ProductDetails = () => {
               {productDetails.description}
             </Typography>
           </CardContent>
+
+          <ProductCounter />
 
           <Grid
             sx={{
