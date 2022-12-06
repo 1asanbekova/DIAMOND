@@ -22,11 +22,11 @@ export default function UpNavbar() {
               width: "100%",
               textAlign: "center",
               color: "#434343",
+              fontFamily: "Quattrocento Sans",
               fontSize: "20px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontFamily: "Quattrocento Sans",
             }}
           >
             Buy Now Pay Later with Installments

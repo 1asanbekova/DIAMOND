@@ -5,7 +5,6 @@ import {
   calcTotalPrice,
   getCountProductsInCart,
 } from "../helpers/functions";
-
 const cartContext = createContext();
 
 export const useCart = () => {

@@ -6,3 +6,8 @@ body {
   transform: scale(1.1);
   transition: 0.5s;
 }
+.counter_button {
+  display: flex;
+  justify-content: center;
+  padding: 15px 10px 10px 10px;
+}

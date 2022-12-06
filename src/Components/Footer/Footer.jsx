@@ -140,7 +140,7 @@ const Footer = () => {
               },
             }}
           >
-            Corporate
+            CORPORATE
           </Typography>
           <List
             sx={{

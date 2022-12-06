@@ -1,4 +1,12 @@
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import PaymentIcon from "@mui/icons-material/Payment";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import "./ProductCard.css";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -24,6 +32,19 @@ const ProductDetails = () => {
 
   //! ====================
 
+  const LiItems = [
+    "leather / textile / synthetic",
+    "embossed FILA logos on tongue, quarter, and instep",
+    "embossed FILA basketball logo on adjustable heel strap",
+    "perforated and reflective detailing on eyerow",
+    "embossed detailing on sidewall",
+    "cushioned heel collar and mesh tongue",
+    "adjustable heel strap",
+  ];
+  const [color, setColor] = useState(false);
+  function changeColor() {
+    setColor((prev) => !prev);
+  }
   return (
     <Grid sx={{ mb: "50px", mt: "50px" }}>
       <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
@@ -34,18 +55,6 @@ const ProductDetails = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <Button
-            onClick={() => navigate(`/products`)}
-            variant="contained"
-            sx={{
-              color: "white",
-              backgroundColor: "#0a203f",
-              width: "100px",
-              height: "50px",
-            }}
-          >
-            Disabled
-          </Button>
           {/* условный рендеринг для админа */}
           {email === ADD ? (
             <>
@@ -84,7 +93,7 @@ const ProductDetails = () => {
         </Grid>
         <Box
           sx={{
-            width: "90%",
+            width: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -99,25 +108,72 @@ const ProductDetails = () => {
             />
           </Typography>
         </Box>
-
-        <CardContent
+        <Box
           sx={{
-            width: "100%",
-            fontWeight: "bold",
-            textAlign: "center",
+            width: "40%",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Typography gutterBottom variant="h3" component="div">
-            {productDetails.name}
-          </Typography>
+          <CardContent
+            sx={{
+              width: "100%",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            <Typography gutterBottom variant="h3" component="div">
+              {productDetails.name}
+            </Typography>
 
-          <Typography sx={{ fontSize: "25px", color: "green" }}>
-            ${productDetails.price}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {productDetails.description}
-          </Typography>
-        </CardContent>
+            <Typography sx={{ fontSize: "25px", color: "green" }}>
+              ${productDetails.price}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {productDetails.description}
+            </Typography>
+          </CardContent>
+          <Box sx={{ width: "50%" }}>
+            <Box
+              sx={{ display: "flex", justifyContent: "start" }}
+              className="sizes__top"
+            >
+              <Typography
+                sx={{
+                  color: "rgb(46, 44, 44)",
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  borderBottom: "1px solid rgb(46, 44, 44)",
+                }}
+              ></Typography>
+            </Box>
+          </Box>
+          <ProductCounter />
+          <Box>
+            <Box sx={{ width: "100%" }}>
+              {/* <Accordion sx={{ width: "100%" }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography sx={{ fontWeight: "700" }}>
+                    Features & Specs
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    {LiItems.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </AccordionDetails>
+              </Accordion> */}
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Grid>
   );

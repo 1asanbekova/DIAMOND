@@ -25,6 +25,7 @@ const ProductCounter = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
+          flexDirection: "column",
           pt: "10px",
           margin: "15px",
           padding: "20px",
@@ -36,10 +37,11 @@ const ProductCounter = () => {
           component="div"
           sx={{
             border: "1px solid",
+            borderRadius: "15px",
             width: "70px",
             height: "28px",
             marginTop: "1px",
-            marginRight: "15px",
+            marginBottom: "15px",
           }}
         >
           <div>
@@ -66,35 +68,35 @@ const ProductCounter = () => {
             variant="contained"
             onClick={() => addProductToCart(productDetails)}
             sx={{
-              backgroundColor: "#0a203f",
+              backgroundColor: "#ffc7ba",
               color: "white",
-              width: "300px",
+              width: "400px",
               height: "55px",
               // mb: "50px",
-              borderRadius: "1px",
+              borderRadius: "15px",
               font: "16px",
               fontWeight: "600",
             }}
           >
-            ALREADY IN BAG
+            Already in cart
           </Button>
         ) : (
           <Button
             variant="contained"
             onClick={() => addProductToCart(productDetails)}
             sx={{
-              backgroundColor: "#0a203f",
+              backgroundColor: "#ffc7ba",
               color: "white",
-              width: "300px",
+              width: "400px",
               height: "55px",
               // mb: "50px",
-              borderRadius: "1px",
+              borderRadius: "15px",
               font: "16px",
               fontWeight: "600",
             }}
           >
             {" "}
-            ADD TO BAG
+            Add to cart
           </Button>
         )}
       </Box>
