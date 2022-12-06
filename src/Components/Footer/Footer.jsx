@@ -120,6 +120,7 @@ const Footer = () => {
                   <Link
                     sx={{
                       color: "#434343",
+                      textDecoration: "none",
                       cursor: "pointer",
                       transition: "0.5s",
                     }}
@@ -164,6 +165,7 @@ const Footer = () => {
                   <Link
                     sx={{
                       color: "#434343",
+                      textDecoration: "none",
                       cursor: "pointer",
                       transition: "0.5s",
                     }}
@@ -209,6 +211,7 @@ const Footer = () => {
                     sx={{
                       color: "#434343",
                       cursor: "pointer",
+                      textDecoration: "none",
                       transition: "0.5s",
                     }}
                   >

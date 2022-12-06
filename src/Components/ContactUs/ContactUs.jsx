@@ -7,7 +7,14 @@ const ContactUs = () => {
   return (
     <>
       <Box>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundImage:
+              "url(https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/high-jewelry/marvelous-creations-by-harry-winston/plp/herolarged_marvelous_plp_4_python_2.gif?rev=19b7f9fc01b145ca845cf53d2ce986ad)",
+          }}
+        >
           <Typography
             sx={{
               fontSize: "50px",
@@ -23,7 +30,7 @@ const ContactUs = () => {
         <Box
           sx={{
             width: "80%",
-            height: "400px",
+            height: "430px",
             display: "flex",
             justifyContent: "space-evenly",
             margin: "0 auto",
