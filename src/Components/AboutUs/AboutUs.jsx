@@ -21,15 +21,12 @@ const AboutUs = () => {
       <Box>
         <Box
           sx={{
-            width: "100%",
-            height: "500px",
-            marginBottom: 15,
+            marginBottom: "10%",
           }}
         >
           <img
             style={{
-              wihth: "100%",
-              height: "600px",
+              width: "100%",
             }}
             src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/category/wedding-bands/herolarged_l2_cake_wb_main.jpg?rev=215353f8c5f94059bc5a7309c94c63ea"
             alt="error"
@@ -113,15 +110,7 @@ const AboutUs = () => {
             every time: pain and frustration. In my search for safe earrings, I
             discovered that I didn't just have sensitive ears, I had actually
             developed a contact allergy to metal from years of wearing earrings
-            made with reactive materials. Armed with this new knowledge, I set
-            out to work researching metal allergies. When I learned about the
-            biocompatible properties of titanium and niobium and I knew that I
-            had found my solution. Although I didn't set out to start a
-            business, I knew that I had discovered something that could change
-            how people wore jewelry. I decided that if no one else was going to
-            create an option for all of the people with sensitive ears, then I
-            would have to be the one to do it. And from there, Tini Lux was
-            born.
+            made with reactive materials.
           </Typography>
         </Box>
 
@@ -155,23 +144,20 @@ const AboutUs = () => {
             justifyContent: "center",
             marginTop: "8%",
             marginBottom: "8%",
+            justifyContent: "space-evenly",
           }}
         >
-          <Box sx={{ ml: "22%" }}>
-            <img
-              style={{ maxWidth: "80%" }}
-              src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/engagement-and-bridal/sbs_l2_cake_en.jpg?rev=34f5be85d89142ea859b2419f639b65c"
-              alt="err"
-            />
-          </Box>
+          <img
+            style={{ maxWidth: "30%" }}
+            src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/engagement-and-bridal/sbs_l2_cake_en.jpg?rev=34f5be85d89142ea859b2419f639b65c"
+            alt="err"
+          />
 
-          <Box>
-            <img
-              style={{ maxWidth: "80%" }}
-              src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/engagement-and-bridal/sbs_l2_cake_wb.jpg?rev=9d87b22c93194b5d846d6b68c774bb6e"
-              alt="err"
-            />
-          </Box>
+          <img
+            style={{ maxWidth: "30%" }}
+            src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/engagement-and-bridal/sbs_l2_cake_wb.jpg?rev=9d87b22c93194b5d846d6b68c774bb6e"
+            alt="err"
+          />
         </Box>
       </Box>
     </div>

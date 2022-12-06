@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, createTheme } from "@mui/material";
 import React, { useEffect } from "react";
 import { useProducts } from "../../Contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
@@ -9,6 +9,18 @@ const ProductList = ({ currentData }) => {
   useEffect(() => {
     getProducts();
   }, []);
+
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 1024,
+        lg: 1250,
+        xl: 1440,
+      },
+    },
+  });
 
   return (
     <Box

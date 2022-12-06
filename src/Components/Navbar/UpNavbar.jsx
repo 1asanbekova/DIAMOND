@@ -3,8 +3,22 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { createTheme } from "@mui/material";
 
 export default function UpNavbar() {
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xxxxs: 325,
+        xxxs: 380,
+        xxs: 430,
+        xs: 770,
+        sm: 915,
+        md: 1025,
+      },
+    },
+  });
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -27,6 +41,9 @@ export default function UpNavbar() {
               justifyContent: "center",
               alignItems: "center",
               fontFamily: "Quattrocento Sans",
+              [theme.breakpoints.down("xxxxs")]: {
+                fontSize: "17px",
+              },
             }}
           >
             Buy Now Pay Later with Installments

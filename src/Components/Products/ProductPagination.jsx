@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography, Divider, createTheme } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { JSON_API_PRODUCTS } from "../../helpers/consts";
 import axios from "axios";
-
 const ProductPagination = ({ page, setPage, count }) => {
   const [sort, setSort] = React.useState("");
 
@@ -26,6 +25,20 @@ const ProductPagination = ({ page, setPage, count }) => {
   const handleChange = (e, p) => {
     setPage(p);
   };
+
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xxxs: 320,
+        xxs: 380,
+        xs: 425,
+        sm: 770,
+        md: 1024,
+        lg: 1250,
+        xl: 1440,
+      },
+    },
+  });
   return (
     <div>
       <Box
@@ -47,6 +60,7 @@ const ProductPagination = ({ page, setPage, count }) => {
           sx={{
             display: "flex",
             alignItems: "center",
+            width: "100%",
             margin: {
               xs: "9%",
               sm: "10%",
@@ -73,9 +87,10 @@ const ProductPagination = ({ page, setPage, count }) => {
           <Stack spacing={2} sx={{ marginRight: 5 }}>
             <Pagination
               page={page}
+              className="pagination"
               onChange={handleChange}
               count={count}
-              color="primary"
+              color="error"
               size="small"
             />
           </Stack>

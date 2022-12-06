@@ -1,11 +1,13 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "../Components/HomePage/HomePage";
 import { useAuth } from "../Contexts/AuthContextProvider";
+import { ADD } from "../helpers/consts";
 import AboutUsPage from "../Pages/AboutUsPage";
 import AddProductPage from "../Pages/AddProductPage";
 import AuthPage from "../Pages/AuthPage";
 import ContactUsPage from "../Pages/ContactUsPage";
+import EditProductPage from "../Pages/EditProductPage";
 import ProductDetailsPage from "../Pages/ProductDetailsPage";
 import ProductsPage from "../Pages/ProductsPage";
 
@@ -21,12 +23,33 @@ const MainRoutes = () => {
     { link: "/aboutus", element: <AboutUsPage />, id: 5 },
     { link: "/contactus", element: <ContactUsPage />, id: 6 },
   ];
+
+  const PRIVATE_ROUTES = [
+    { link: "/edit/:id", element: <EditProductPage />, id: 8 },
+    { link: "/admin", element: <AddProductPage />, id: 3 },
+  ];
   return (
     <>
       <Routes>
         {PUBLIC_ROUTES.map((item) => (
           <Route path={item.link} element={item.element} key={item.id} />
         ))}
+
+        {user
+          ? PRIVATE_ROUTES.map((item) => (
+              <Route
+                key={item.id}
+                path={item.link}
+                element={
+                  user.email === ADD ? (
+                    item.element
+                  ) : (
+                    <Navigate replace to="*" />
+                  )
+                }
+              />
+            ))
+          : null}
       </Routes>
     </>
   );

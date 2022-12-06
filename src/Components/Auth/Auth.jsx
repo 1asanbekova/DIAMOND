@@ -49,22 +49,6 @@ export default function Auth() {
           sx={{
             display: "flex",
           }}
-          //   sx={{
-          //     mb: 8,
-          //     display: "flex",
-          //     flexDirection: {
-          //       xs: "column",
-          //       md: "row",
-          //     },
-          //     justifyContent: {
-          //       xs: "center",
-          //       md: "space-around",
-          //     },
-          //     alignItems: {
-          //       xs: "center",
-          //       md: "flex-start",
-          //     },
-          //   }}
         >
           <Box
             sx={{
@@ -73,19 +57,36 @@ export default function Auth() {
               width: { xs: "90%", sm: "70%", md: "45%" },
             }}
           >
-            <Typography
-              sx={{
-                fontWeight: 700,
-                fontSize: "45px",
-                fontFamily: "Quattrocento Sans",
-                textAlign: "center",
-                color: "rgb(47, 12, 12)",
-              }}
-              component="h1"
-              variant="h5"
-            >
-              Sign In
-            </Typography>
+            {hasAccount ? (
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "45px",
+                  fontFamily: "Quattrocento Sans",
+                  textAlign: "center",
+                  color: "rgb(47, 12, 12)",
+                }}
+                component="h1"
+                variant="h5"
+              >
+                Sign In
+              </Typography>
+            ) : (
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "45px",
+                  fontFamily: "Quattrocento Sans",
+                  textAlign: "center",
+                  color: "rgb(47, 12, 12)",
+                }}
+                component="h1"
+                variant="h5"
+              >
+                REGISTER
+              </Typography>
+            )}
+
             <Box
               component="form"
               onSubmit={handleSubmit}

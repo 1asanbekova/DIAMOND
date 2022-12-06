@@ -9,30 +9,26 @@ import {
   Typography,
 } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../Contexts/ProductContextProvider";
+const EditProduct = () => {
+  const { productDetails, getProductDetails, saveEditedProduct } =
+    useProducts();
 
-const AddProduct = () => {
-  const { addProduct } = useProducts();
+  const [product, setProduct] = useState(productDetails);
+  const { id } = useParams();
+  useEffect(() => {
+    getProductDetails(id);
+  }, []);
+
+  useEffect(() => {
+    setProduct(productDetails);
+  }, [productDetails]);
+
   const navigate = useNavigate();
-  const [product, setProduct] = useState({
-    name: "",
-    description: "",
-    price: 0,
-    picture: "",
-    type: "",
-  });
 
-  const handleInp = (e) => {
-    if (e.target.name === "price") {
-      let obj = { ...product, [e.target.name]: Number(e.target.value) };
-      setProduct(obj);
-    } else {
-      let obj = { ...product, [e.target.name]: e.target.value };
-      setProduct(obj);
-    }
-  };
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -45,12 +41,17 @@ const AddProduct = () => {
     },
   });
 
+  const handleInp = (e) => {
+    let obj = { ...product, [e.target.name]: e.target.value };
+    setProduct(obj);
+  };
+
   return (
     <Box
       align="center"
       sx={{
         backgroundImage:
-          "url(https://img2.akspic.ru/crops/9/3/4/0/7/170439/170439-svet-purpur-drevesnyj_ugol-ogon-plamya-3840x2160.jpg)",
+          "url(https://img2.akspic.ru/crops/0/1/5/0/7/170510/170510-singulyarnost_6-paliya-legendy_runterry-singulyarnost_6_korporaciya-mir-3840x2160.png)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "100%",
         height: "90vh",
@@ -76,7 +77,7 @@ const AddProduct = () => {
           },
         }}
       >
-        ADD PRODUCT
+        EDIT PRODUCT
       </Typography>
       <Box
         sx={{
@@ -98,10 +99,10 @@ const AddProduct = () => {
             borderRadius: "4px",
           }}
           fullWidth
-          label="Name"
           variant="outlined"
           name="name"
           size="small"
+          value={product.name || ""}
         />
 
         <FormControl
@@ -124,6 +125,7 @@ const AddProduct = () => {
             size="small"
             type="number"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
+            value={product.price || ""}
           />
         </FormControl>
 
@@ -135,10 +137,11 @@ const AddProduct = () => {
             borderRadius: "4px",
           }}
           fullWidth
-          label="Picture"
+          //   label="Picture"
           variant="outlined"
           name="picture"
           size="small"
+          value={product.picture || ""}
         />
         <TextField
           onChange={handleInp}
@@ -148,15 +151,15 @@ const AddProduct = () => {
             borderRadius: "4px",
           }}
           fullWidth
-          label="Type"
           variant="outlined"
           name="type"
           size="small"
+          value={product.type || ""}
         />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Button
             onClick={() => {
-              addProduct(product);
+              saveEditedProduct(product);
               navigate("/products");
             }}
             sx={{
@@ -173,7 +176,7 @@ const AddProduct = () => {
             fullWidth
             size="large"
           >
-            ADD PRODUCT
+            SAVE EDIT
           </Button>
         </Box>
       </Box>
@@ -181,4 +184,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

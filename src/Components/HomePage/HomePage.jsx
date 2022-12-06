@@ -2,6 +2,7 @@ import { Button, ThemeProvider, Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Box, margin } from "@mui/system";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 const icons = [
@@ -43,13 +44,14 @@ const homePageImg = [
 ];
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
-    <Grid>
+    <Box>
       <Box
         sx={{
+          marginBottom: 5,
           width: "100%",
           height: "500px",
-          marginBottom: 5,
           backgroundImage: `url(https://cdn.shopify.com/s/files/1/2529/3968/files/bannerlarge.jpg?v=1669608447&width=1500)`,
         }}
       >
@@ -67,7 +69,8 @@ const HomePage = () => {
               fontSize: "50px",
               color: "#434343",
               textAlign: "center",
-              marginBottom: "5px",
+              fontWeight: "400",
+              marginBottom: "3%",
               fontFamily: "Quattrocento Sans",
             }}
           >
@@ -84,8 +87,9 @@ const HomePage = () => {
             Enjoy up to 35% off customer favorites all week long.
           </Typography>
           <Button
-            variant="contained"
+            variant="outlined"
             sx={{
+              mt: "8%",
               backgroundColor: "#E0E0E0",
               color: "#434343",
               width: "150px",
@@ -94,7 +98,7 @@ const HomePage = () => {
               border: "solid",
               borderRadius: "15px",
             }}
-            // onClick={() => navigate("/products")}
+            onClick={() => navigate("/products")}
           >
             Shop now
           </Button>
@@ -121,6 +125,12 @@ const HomePage = () => {
         <img
           style={{ width: "65%", borderRadius: "10px" }}
           src="https://cdn.shopify.com/s/files/1/2529/3968/files/FineJewelry-3.jpg?v=1660441212"
+        />
+      </Box>
+      <Box>
+        <img
+          width="100%"
+          src="https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/high-jewelry/marvelous-creations-by-harry-winston/plp/herolarged_marvelous_plp_3_butterfly_2.gif?rev=cdc5e43d532542f6bf53f79b171af377"
         />
       </Box>
       <Box
@@ -215,7 +225,7 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: "100%",
+          width: "90%",
           margin: "auto",
           display: "flex",
           alignItems: "center",
@@ -225,12 +235,14 @@ const HomePage = () => {
       >
         {homePageImg.map((e, index) => (
           <div key={index} className="photoDivs2 homePageImg">
-            <img src={e.img} alt="" width="100%" />
+            <Button onClick={() => navigate("/products")}>
+              <img src={e.img} alt="" width="100%" />
+            </Button>
             <p>{e.name}</p>
           </div>
         ))}
       </Box>
-    </Grid>
+    </Box>
   );
 };
 
