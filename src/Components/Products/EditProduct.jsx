@@ -159,7 +159,7 @@ const EditProduct = () => {
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Button
             onClick={() => {
-              saveEditedProduct(product);
+              saveEditedProduct(product, id);
               navigate("/products");
             }}
             sx={{

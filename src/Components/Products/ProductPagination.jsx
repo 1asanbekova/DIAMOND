@@ -4,9 +4,8 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { JSON_API_PRODUCTS } from "../../helpers/consts";
 import axios from "axios";
-const ProductPagination = ({ page, setPage, count }) => {
-  const [sort, setSort] = React.useState("");
 
+const ProductPagination = ({ page, setPage, count }) => {
   const [productCount, setProductCount] = useState([]);
 
   async function productQuantity() {
@@ -17,10 +16,6 @@ const ProductPagination = ({ page, setPage, count }) => {
   useEffect(() => {
     productQuantity();
   }, []);
-
-  const handleSort = (event) => {
-    setSort(event.target.value);
-  };
 
   const handleChange = (e, p) => {
     setPage(p);

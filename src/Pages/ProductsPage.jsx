@@ -17,7 +17,9 @@ const ProductsPage = () => {
 
   //! для пагинации
   const [page, setPage] = useState(1);
+
   const itemsPerPage = 9;
+
   const count = Math.ceil(products.length / itemsPerPage);
 
   function currentData() {
