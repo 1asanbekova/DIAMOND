@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "Sapphire and Diamond Pendant",
+      "name": "Sapphire and Diamond PendantTTT",
       "price": 10000,
       "picture": "https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/forget-me-not-by-harry-winston/forget-me-not-sapphire-and-diamond-pendant/forget_me_not_by_harry_winston_pendant_diamond_and_sapphire_pesprfflrfmn_e_1.png?rev=f34ef1fa6e294f1d9e2dfd504e76a79c",
       "type": "Pendant",
@@ -34,13 +34,6 @@
       "picture": "https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/forget-me-not-by-harry-winston/forget-me-not-pink-sapphire-and-diamond-earrings/forget_me_not_by_harry_winston_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1.png?rev=a9c483b0f81e404197541ea9c5abd8bd",
       "type": "Earrings",
       "id": 12
-    },
-    {
-      "name": "Sapphire and Diamond Earrings",
-      "price": 8500,
-      "picture": "https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/forget-me-not-by-harry-winston/forget-me-not-sapphire-and-diamond-earrings/forget_me_not_by_harry_winston_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1.png?rev=529107d7a87841138980cc0f296d55e8",
-      "type": "Earrings",
-      "id": 13
     },
     {
       "name": "Lily Cluster Rose Gold Diamond Bracelet",
@@ -106,12 +99,44 @@
       "id": 22
     },
     {
-      "name": "",
+      "name": "Aiuuii",
+      "description": "",
+      "price": 5415,
+      "picture": "asacsa",
+      "type": "kaicsao",
+      "id": 23
+    },
+    {
+      "name": "Rings",
+      "description": "",
+      "price": 10000,
+      "picture": "https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/forget-me-not-by-harry-winston/forget-me-not-pink-sapphire-and-diamond-ring/forget_me_not_by_harry_winston_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1.png?rev=371f78a672ae4b1c8633b1108e1eba6f",
+      "type": "rings",
+      "id": 24
+    },
+    {
+      "name": "SWA",
+      "description": "",
+      "price": 654521,
+      "picture": "https://www.harrywinston.com/-/media/project/harry-winston/corporate/harry-winston-int/fine-jewelry/forget-me-not-by-harry-winston/forget-me-not-pink-sapphire-and-diamond-ring/forget_me_not_by_harry_winston_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1.png?rev=371f78a672ae4b1c8633b1108e1eba6f",
+      "type": "lkjhvbnm,",
+      "id": 26
+    },
+    {
+      "name": "vfdvfd",
+      "description": "",
+      "price": 51454,
+      "picture": "vfdvfd",
+      "type": "kfdnvkjfd",
+      "id": 27
+    },
+    {
+      "name": "vrevrevre",
       "description": "",
       "price": 0,
-      "picture": "",
-      "type": "",
-      "id": 23
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/3/3c/IMG_logo_%282017%29.svg",
+      "type": "fervrevr",
+      "id": 28
     }
   ]
 }

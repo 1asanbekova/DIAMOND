@@ -9,6 +9,7 @@ import AuthPage from "../Pages/AuthPage";
 import CartPage from "../Pages/CartPage";
 import ContactUsPage from "../Pages/ContactUsPage";
 import EditProductPage from "../Pages/EditProductPage";
+import NotFoundPage from "../Pages/NotFoundPage";
 import ProductDetailsPage from "../Pages/ProductDetailsPage";
 import ProductsPage from "../Pages/ProductsPage";
 import ShopPage from "../Pages/ShopPage";
@@ -18,7 +19,8 @@ const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { link: "/auth", element: <AuthPage />, id: 1 },
     { link: "/", element: <HomePage />, id: 2 },
-    { link: "/addproduct", element: <AddProductPage />, id: 3 },
+    { link: "*", element: <NotFoundPage />, id: 18 },
+
     { link: "/products", element: <ProductsPage />, id: 4 },
     { link: "/products/:id", element: <ProductDetailsPage />, id: 7 },
 
@@ -30,7 +32,7 @@ const MainRoutes = () => {
 
   const PRIVATE_ROUTES = [
     { link: "/edit/:id", element: <EditProductPage />, id: 8 },
-    { link: "/admin", element: <AddProductPage />, id: 3 },
+    { link: "/addProduct", element: <AddProductPage />, id: 10 },
   ];
   return (
     <>
@@ -48,7 +50,7 @@ const MainRoutes = () => {
                   user.email === ADD ? (
                     item.element
                   ) : (
-                    <Navigate replace to="*" />
+                    <Navigate replace to="/*" />
                   )
                 }
               />
